@@ -94,7 +94,7 @@ button:hover {
 	max-width: 1100px;
 	background: #fff;
 	margin: 30px auto;
-	overflow: hidden;
+
 }
 
 .chat-main {
@@ -167,14 +167,14 @@ button:hover {
 .chat-messages {
 	padding: 30px;
 	max-height: 500px;
-	overflow-y: scroll;
+	
 }
 .chat-messages .message {
 	padding: 10px;
 	margin-bottom: 15px;
 	background-color: var(--light-color);
 	border-radius: 5px;
-	overflow-wrap: break-word;
+
 }
 
 .chat-messages .message .meta {
