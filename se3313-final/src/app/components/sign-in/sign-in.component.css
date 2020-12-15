@@ -1,0 +1,80 @@
+h1 {
+   
+    font-size: 80px;
+    text-align: left;
+    left: 500px;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    background: #7F00FF;
+   
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+ }
+
+.join-container{
+    margin: auto;
+    border-radius: 25px;
+    border: 2px solid #7F00FF;
+    padding: 20px;
+    width: 400px;
+    height: 300px;
+    margin-bottom: 20px;
+
+}
+
+.join-main {
+  
+	padding: 30px 40px;
+    background: var(--dark-color-b);
+    margin-bottom: 20px;
+}
+
+.join-main.form-control {
+
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px;
+    border-color: #7F00FF;
+    border-radius: 4px;
+    padding: 10px;
+} 
+
+.join-main label {
+    display: block;
+    margin-bottom: 20px;
+    
+}
+
+.join-main input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.join-main select {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main .btn {
+	margin-top: 20px;
+	width: 100%;
+}
+
+button {
+    margin: auto;
+    padding-top: 30px;
+    transition-duration: 0.4s;
+    background-color: #7F00FF;
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 8px;
+    border-color: #7F00FF;
+}
+button:hover {
+    background-color: white; /* Green */
+    color: #7F00FF;
+}

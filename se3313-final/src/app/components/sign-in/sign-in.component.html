@@ -1,20 +1,29 @@
-<div>
-    <label>
-      Username: 
-      <input type="text" #username/>
-    </label>
-    <select class ="rooms" #rooms >
-        <option value="JavaScript">Debian Discussion</option>
-        <option value="Python">Python</option>
-        <option value="PHP">PHP</option>
-        <option value="C#">C#</option>
-        <option value="Ruby">Ruby</option>
-        <option value="Java">Java</option>
-    </select>
-
-  
-    <button (click)="onSubmit(username.value, rooms.value)">Search</button>
-    
-  
-  
-  </div> 
+ <div class="join-container">
+    <main class="join-main">
+        <form action="chat.html">
+            <div class="form-control">
+                <label for="usernames" class="username" #username>Username
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Enter username..."
+                    required
+                />
+                </label>
+            </div>
+            <div class="form-control">
+                <label for="room "  #rooms>Room</label>
+                <select class ="rooms" #rooms >
+                    <option value="JavaScript">Debian Discussion</option>
+                    <option value="Python">Python</option>
+                    <option value="PHP">PHP</option>
+                    <option value="C#">C#</option>
+                    <option value="Ruby">Ruby</option>
+                    <option value="Java">Java</option>
+                </select>            
+            </div>
+            <button (click)="onSubmit(username.value, rooms.value)">Join Chat</button>
+        </form>
+    </main>
+</div>
