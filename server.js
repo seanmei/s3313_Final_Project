@@ -5,6 +5,9 @@ const socket = require('socket.io')
 const formatMessage = require('./utilities/messages');
 const fs = require('fs');
 const {userJoin, getCurrentUser, removeCurrentUser, getRoomUsers} = require('./utilities/users');
+
+var locks = require('locks');
+var mutex = locks.createMutex();
  
 const app = express();
 const server = http.createServer(app); //create server 
@@ -59,7 +62,17 @@ io.on('connection', socket => {
         });
 
     });
-    //catch message 
+    //catch message
+    
+    socket.on('broadcast', msg => {
+        if (mutex.tryLock()) {
+            console.log('We got the lock!');
+            mutex.unlock();
+        } else {
+            console.log('Could not get the lock at this time');
+        }
+    })
+
     socket.on('chatMessage', msg => {
         const user = getCurrentUser(socket.id);
         console.log("User Last Spoken: " + user);
