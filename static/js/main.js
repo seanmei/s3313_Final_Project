@@ -57,8 +57,7 @@ socket.on('roomUsers', ({ room, users }) =>{
 socket.on('shutDown', response =>{
     console.log("hit")
     alert("The Server was Shut Down. Please Exit by Closing our Page, it will close automatically within 5 seconds");
-    wait(5);
-    window.close();
+    setTimeout(() => { window.close(); }, 5000);
 });
 
 //post room name 
