@@ -12,7 +12,10 @@ const io = socket(server);
 
 //access static folder 
 app.use(express.static(path.join(__dirname, 'static')));
-//app.use(cors())
+
+app.get('/', (req, res) =>{
+    res.send('hello')
+})
 
 const admin = "Professor Grolinger Bot";
 
@@ -85,11 +88,10 @@ server.listen(PORT,  () => {
 process.on('SIGTERM', () => {
     console.info('SIGTERM signal received.');
     console.log('Closing http server.');
-    io.emit('shut down');
-    server.close(() => {
-        console.log('Http server closed.');
-        io.close(() => {
-            console.log
+    io.emit('shutDown');
+    io.close(() => {
+        server.close(() => {
+            console.log('Http server closed.');
         });
     });
 });
