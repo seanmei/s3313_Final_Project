@@ -9,11 +9,11 @@ const {username, room } = Qs.parse(location.search, {
     ignoreQueryPrefix: true
 
 });
+
 console.log()
 
 //Join Chat room 
 socket.emit('joinRoom', { username , room});
-
 
 //listen for response from server 
 socket.on('message', message => {
@@ -52,16 +52,12 @@ function outPutMessage(message){
 socket.on('roomUsers', ({ room, users }) =>{
     outputRoomName(room);
     outputUsers(users);
-  
-
 });
-
 
 //post room name 
 function outputRoomName(room){
     roomName.innerText = room;
 }
-
 
 //post users in chat 
 function outputUsers(users){
